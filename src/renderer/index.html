@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Gluttony Hole</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; user-select: none; }
+    body { cursor: grab; }
+    body.dragging { cursor: grabbing; }
+    canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    #toast {
+      position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%);
+      max-width: 86%; padding: 5px 9px; border-radius: 8px;
+      font: 500 10px/1.3 -apple-system, "Segoe UI", system-ui, sans-serif;
+      color: #e8eeff; background: rgba(8, 10, 22, .78); border: 1px solid rgba(140, 170, 255, .25);
+      text-align: center; opacity: 0; transition: opacity .35s; pointer-events: none;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    #toast.show { opacity: 1; }
+    #toast.err { border-color: rgba(255, 110, 90, .45); color: #ffd9d2; }
+  </style>
+</head>
+<body>
+  <canvas id="hole"></canvas>
+  <canvas id="fx"></canvas>
+  <div id="toast"></div>
+  <script src="shader.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
